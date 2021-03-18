@@ -6,6 +6,7 @@ export class LibsController extends BaseController {
   constructor() {
     super('api/libs')
     this.router
+      .get('', this.getAll)
       .get('/:id', this.getOne)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.create)
@@ -13,10 +14,18 @@ export class LibsController extends BaseController {
       .delete('/:id', this.delete)
   }
 
+  async getAll(req, res, next) {
+    try {
+      res.send(await libsService.get())
+    } catch (error) {
+      next(error)
+    }
+  }
+
   async getOne(req, res, next) {
     try {
-      const data = { _id: req.params.id, creatorId: req.userInfo.id }
-      res.send(await libsService.get(data))
+      const query = { _id: req.params.id }
+      res.send(await libsService.get(query))
     } catch (error) {
       next(error)
     }
@@ -46,7 +55,7 @@ export class LibsController extends BaseController {
   async delete(req, res, next) {
     try {
       const data = {}
-      data.id = req.params.id
+      data._id = req.params.id
       data.creatorId = req.userInfo.id
       res.send(await libsService.delete(data))
     } catch (error) {

@@ -15,6 +15,7 @@ class DraftsService {
     if (!res) {
       throw new BadRequest('Not Enough Data')
     }
+    return res
   }
 
   async edit(data) {

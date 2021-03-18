@@ -46,7 +46,7 @@ export class DraftController extends BaseController {
   async delete(req, res, next) {
     try {
       const data = {}
-      data.id = req.params.id
+      data._id = req.params.id
       data.creatorId = req.userInfo.id
       res.send(await draftsService.delete(data))
     } catch (error) {
