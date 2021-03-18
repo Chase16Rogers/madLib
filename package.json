@@ -1,0 +1,15 @@
+
+  {
+    "name": "madlib",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run setup:client && npm run setup:server",
+      "setup:client": "cd madlib.client && npm i",
+      "setup:server": "cd madlib.server && npm i",
+      "start": "node madlib.server/index.js"
+    },
+    "engines": {
+      "node": "^14.15.4"
+    }
+  }
+  
