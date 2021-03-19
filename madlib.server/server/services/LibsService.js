@@ -21,11 +21,10 @@ class LibsService {
 
   async edit(data) {
     const query = { _id: data._id, creatorId: data.creatorId }
-    const checker = await dbContext.Libs.find(query)
-    if (data.likes > checker.likes) {
-      data.likes = checker.likes++
-    }
-    data.createDate = checker.createDate
+    // const checker = await dbContext.Libs.find(query)
+    // if (data.likes > checker._doc.likes) {
+    //   data.likes = checker._doc.likes++
+    // }
     const res = await dbContext.Libs.findOneAndUpdate(query, data, { new: true })
     if (!res) {
       throw new BadRequest('Invalid Id')
