@@ -22,6 +22,16 @@ const routes = [
     component: loadPage('LibsPage')
   },
   {
+    path: '/activeLib/:id',
+    name: 'ActiveLib',
+    component: loadPage('ActiveLibPage')
+  },
+  {
+    path: '/create',
+    name: 'CreateLib',
+    component: loadPage('CreateLib')
+  },
+  {
     path: '/account',
     name: 'Account',
     component: loadPage('AccountPage'),

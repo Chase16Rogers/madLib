@@ -1,12 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar bg-primary text-secondary">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img
-          alt="logo"
-          src="../assets/img/cw-logo.png"
-          height="45"
-        />
+      <div class="d-flex flex-column align-items-center pl-5">
+        <h2 class="text-secondary mr-5">
+          MADLIB-MAKER
+        </h2>
       </div>
     </router-link>
     <button
@@ -21,20 +19,25 @@
       <span class="navbar-toggler-icon" />
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto text-secondary">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
+          <router-link :to="{ name: 'Home' }" class="nav-link text-secondary">
             Home
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'About' }" class="nav-link">
+          <router-link :to="{ name: 'About' }" class="nav-link text-secondary">
             About
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'LibsPage' }" class="nav-link">
+          <router-link :to="{ name: 'LibsPage' }" class="nav-link text-secondary">
             Libs
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'CreateLib' }" class="nav-link text-secondary">
+            Create
           </router-link>
         </li>
       </ul>
